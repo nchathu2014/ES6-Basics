@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Generators</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.29/browser.min.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.29/browser-polyfill.min.js"></script>
+    <script type="text/babel">
+   		
+   		var myGen = function*(){
+   			var one = yield 1;
+   			var two = yield 2;
+   			var three = yield 3;
+   			console.log(one,two,three);
+   		}
+
+   		var gen = myGen();
+   		console.log(gen.next());
+   		console.log(gen.next("Nuwan"));
+   		console.log(gen.next("Chathuranga"));
+   		console.log(gen.next("DON"));
+   		console.log(gen.next());
+
+
+
+	</script>
+</head>
+<body>
+<h1>Generators</h1>
+</body>
+</html>

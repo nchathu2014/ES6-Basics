@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Let Keyword</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.29/browser.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.29/browser-polyfill.min.js"></script>
+    <script type="text/babel">
+
+    	function* director(){
+    		yield "Three";
+    		yield "Two";
+    		yield "One";
+    		yield "Action";
+    	}
+
+    	var action = director();
+
+    	console.log(action.next().value) //3
+    	console.log(action.next().value) //2
+    	console.log(action.next().value) //1
+    	console.log(action.next().value) //action
+    	console.log(action.next().value) //no yield to go next
+
+
+
+        //example timer
+
+      function* eachItem(array){
+      	 for(let i=0;i<array.length;i++){
+      	 	 yield array[i];
+      	 }
+      }
+
+      var action = eachItem([1,2,3,4,5,6]);
+
+
+      var interval = setInterval(function(){
+
+      	var number = action.next()
+        
+      	
+      	if(number.done){
+      		clearInterval(interval);
+      		console.log("The End...");
+      	}else{
+      		console.log(number.value)
+      	}
+      	
+      },1000)
+
+
+      
+
+    </script>
+</head>
+<body>
+<h1>Generators :</h1>
+<p> Generators are a new type of function that allow us to pause functions in the middle of execution, to be resumed later</p>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Destructuring</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.29/browser.min.js"></script>
+    <script type="text/babel">
+
+    	var numbers=["One","Two","Three","Four","Five"];
+
+    	//ES5 way
+    	console.log(numbers[0]);
+    	console.log(numbers[3]);
+
+    	//ES6 way
+
+    	var [first,,,forth,] = numbers;
+    	console.log(first);
+    	console.log(forth);
+
+    	//with objext ex 1
+
+    	var person={
+    		List : "I am a list",
+    		Map : "I am a Map",
+    		Array:"I am an array"
+    	};
+         
+        var {Map,List} = person;
+        console.log(Map);
+    	console.log(List); 
+
+
+    	//with object ex 2
+
+    	var vacation ={
+    		location:"UK",
+    		travlers:2,
+    		activity:'learing',
+    		cost : "5500STP" 		
+    	};
+
+    	function getVacation({location,activity}){
+    		return `Come to ${location} and do ${activity}`
+    	}
+
+    	console.log(getVacation(vacation));
+
+
+
+    </script>
+</head>
+<body>
+<h1>Destructuring</h1>
+</body>
+</html>

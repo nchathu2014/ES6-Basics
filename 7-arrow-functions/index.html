@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Arrow Functions</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.29/browser.min.js"></script>
+    <script type="text/babel">
+
+    //ES5 way
+
+    var studentList = function(student){
+    	console.log("Student List : "+student);
+    }
+
+    //ES6 way
+    var studentList = student => console.log(`Student List :> ${student}`)
+    studentList(["ReactJS","Polymer","X-Tag"]);
+
+    //Arrow function with 'this' key word
+
+    var person ={
+    	name:"Nuwan",
+    	actions:["run","eat","sleep","work"],
+    	printActions(){
+    		this.actions.map((data)=>{
+    			console.log(`${this.name} doing action ${data}`)
+    		})  		
+    	}
+    }
+
+    person.printActions()
+
+
+    </script>
+</head>
+<body>
+<h1>Arrow Functions</h1>
+</body>
+</html>
