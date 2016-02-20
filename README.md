@@ -10,5 +10,6 @@ Basic features of ECMAScript 2016
 - 7-arrow functions
 - 8-destructuring
 - 9-generators
+- 10-classes
 
 Learning is in progress... :)
